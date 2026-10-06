@@ -8,8 +8,8 @@
 <meta name="description" content="Kirolos & Engy joyfully invite you to celebrate Our Wedding on 27 October 2026.">
 <meta property="og:title" content="Kirolos & Engy — Our Wedding">
 <meta property="og:description" content="27 October 2026 • St. George Church • Dar El Markabat">
-<meta property="og:image" content="assets/gallery3.webp?v=6">
-<link rel="preload" as="image" href="assets/gallery3.webp?v=6" type="image/webp">
+<meta property="og:image" content="assets/gallery3.webp?v=7">
+<link rel="preload" as="image" href="assets/gallery3.webp?v=7" type="image/webp">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Italiana&family=Parisienne&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap');
@@ -26,7 +26,7 @@ body{
 .cover{
   position:fixed;inset:0;z-index:50;
   display:grid;place-items:center;text-align:center;color:#fff;
-  background:linear-gradient(#0004,#0008),url('assets/gallery3.webp?v=6') center/cover;
+  background:linear-gradient(#0004,#0008),url('assets/gallery3.webp?v=7') center/cover;
   transition:.8s
 }
 .cover.hide{opacity:0;visibility:hidden;pointer-events:none}
@@ -42,7 +42,7 @@ section{max-width:760px;margin:auto;padding:72px 22px;text-align:center}
 
 .hero{
   max-width:none;height:100svh;padding:0;position:relative;
-  background:linear-gradient(#0002,#0008),url('assets/gallery3.webp?v=6') center/cover;
+  background:linear-gradient(#0002,#0008),url('assets/gallery3.webp?v=7') center/cover;
   display:grid;place-items:end center;color:#fff
 }
 .hero .inner{padding:0 22px 62px}
@@ -213,7 +213,7 @@ section{max-width:760px;margin:auto;padding:72px 22px;text-align:center}
   .arrow{width:40px;height:40px}
   .verse{padding:66px 22px 72px}
   .verse-card{padding:36px 8px 34px}
-  .verse-text{font-size:25px;line-height:1.85}
+  .verse-text{font-size:24px;line-height:1.8}
   .verse-ref{font-size:17px}
   .verse-ornament span{width:42px}
 }
@@ -286,8 +286,8 @@ section{max-width:760px;margin:auto;padding:72px 22px;text-align:center}
     </div>
 
     <p class="verse-text">
-      <span class="verse-line">«ليكون فيهم الحب الذي أحببتني به،</span>
-      <span class="verse-line">وأكون أنا فيهم»</span>
+      <span class="verse-line">«ليكون فيهم الحب الذي أحببتني</span>
+      <span class="verse-line">به، وأكون أنا فيهم»</span>
     </p>
 
     <p class="verse-ref">(يوحنا ١٧:٢٦)</p>
@@ -302,16 +302,16 @@ section{max-width:760px;margin:auto;padding:72px 22px;text-align:center}
     <div class="slider" id="slider">
       <div class="track" id="track">
         <div class="slide">
-          <img src="assets/gallery3.webp?v=6" alt="Kirolos and Engy" decoding="async">
+          <img src="assets/gallery3.webp?v=7" alt="Kirolos and Engy" decoding="async">
         </div>
         <div class="slide">
-          <img src="assets/gallery6.webp?v=6" alt="Kirolos and Engy" loading="lazy" decoding="async">
+          <img src="assets/gallery6.webp?v=7" alt="Kirolos and Engy" loading="lazy" decoding="async">
         </div>
         <div class="slide">
-          <img src="assets/gallery7.webp?v=6" alt="Kirolos and Engy" loading="lazy" decoding="async">
+          <img src="assets/gallery7.webp?v=7" alt="Kirolos and Engy" loading="lazy" decoding="async">
         </div>
         <div class="slide">
-          <img src="assets/gallery8.webp?v=6" alt="Kirolos and Engy" loading="lazy" decoding="async">
+          <img src="assets/gallery8.webp?v=7" alt="Kirolos and Engy" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -336,8 +336,8 @@ section{max-width:760px;margin:auto;padding:72px 22px;text-align:center}
   <p>With love, always.</p>
 </footer>
 
-<audio id="bgMusic" loop preload="metadata">
-  <source src="assets/wedding-music.mp3?v=6" type="audio/mpeg">
+<audio id="bgMusic" loop preload="auto" playsinline>
+  <source src="assets/wedding-music.mp3?v=7" type="audio/mpeg">
 </audio>
 
 <button class="music-toggle off" id="musicToggle" aria-label="Toggle background music">♫</button>
@@ -346,31 +346,62 @@ section{max-width:760px;margin:auto;padding:72px 22px;text-align:center}
 const cover = document.getElementById('cover');
 const music = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
+let audioUnlocked = false;
 
 function setMusicState(playing){
   musicToggle.classList.toggle('off', !playing);
   musicToggle.setAttribute('aria-label', playing ? 'Pause background music' : 'Play background music');
 }
 
+function startMusic(){
+  music.muted = false;
+  music.volume = 0.22;
+
+  const playPromise = music.play();
+  if(playPromise !== undefined){
+    playPromise
+      .then(()=>{
+        audioUnlocked = true;
+        setMusicState(true);
+      })
+      .catch(()=>{
+        setMusicState(false);
+      });
+  }
+}
+
+/* Unlock audio on the earliest real touch/click.
+   This is more reliable on Android Chrome than waiting for a later event. */
+function unlockAudio(){
+  if(audioUnlocked) return;
+  startMusic();
+}
+
+document.addEventListener('pointerdown', unlockAudio, {once:true, passive:true});
+document.addEventListener('touchstart', unlockAudio, {once:true, passive:true});
+
 function openInvite(){
   cover.classList.add('hide');
   document.body.style.overflow='auto';
   musicToggle.classList.add('visible');
-
-  music.volume = 0.22;
-  music.play()
-    .then(()=>setMusicState(true))
-    .catch(()=>setMusicState(false));
+  startMusic();
 }
 
-musicToggle.addEventListener('click',()=>{
+musicToggle.addEventListener('click',(e)=>{
+  e.preventDefault();
+  e.stopPropagation();
+
   if(music.paused){
-    music.play().then(()=>setMusicState(true)).catch(()=>setMusicState(false));
+    startMusic();
   }else{
     music.pause();
     setMusicState(false);
   }
 });
+
+music.addEventListener('play',()=>setMusicState(true));
+music.addEventListener('pause',()=>setMusicState(false));
+music.addEventListener('error',()=>setMusicState(false));
 
 document.body.style.overflow='hidden';
 
