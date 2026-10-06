@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f7f0e5">
+<meta name="theme-color" content="#f8f1e9">
 <title>Kirolos & Engy — 27.10.2026</title>
 <meta name="description" content="Kirolos & Engy joyfully invite you to celebrate Our Wedding on 27 October 2026.">
 <meta property="og:title" content="Kirolos & Engy — Our Wedding">
 <meta property="og:description" content="27 October 2026 • St. George Church • Dar El Markabat">
-<meta property="og:image" content="assets/gallery3.webp?v=7">
-<link rel="preload" as="image" href="assets/gallery3.webp?v=7" type="image/webp">
+<meta property="og:image" content="assets/gallery3.webp?v=9">
+<link rel="preload" as="image" href="assets/gallery3.webp?v=9" type="image/webp">
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Italiana&family=Parisienne&family=Noto+Naskh+Arabic:wght@400;500;600&display=swap');
@@ -18,15 +18,15 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:#f8f2e8;
-  color:#2f3b2e;
+  background:#f8f1e9;
+  color:#30382f;
   font-family:'Cormorant Garamond',serif;
 }
 
 .cover{
   position:fixed;inset:0;z-index:50;
   display:grid;place-items:center;text-align:center;color:#fff;
-  background:linear-gradient(#0004,#0008),url('assets/gallery3.webp?v=7') center/cover;
+  background:linear-gradient(#0004,#0008),url('assets/gallery3.webp?v=9') center/cover;
   transition:.8s
 }
 .cover.hide{opacity:0;visibility:hidden;pointer-events:none}
@@ -42,11 +42,70 @@ section{max-width:760px;margin:auto;padding:72px 22px;text-align:center}
 
 .hero{
   max-width:none;height:100svh;padding:0;position:relative;
-  background:linear-gradient(#0002,#0008),url('assets/gallery3.webp?v=7') center/cover;
-  display:grid;place-items:end center;color:#fff
+  background:
+    linear-gradient(180deg,rgba(30,26,34,.04) 18%,rgba(25,27,42,.12) 46%,rgba(20,24,39,.78) 100%),
+    linear-gradient(90deg,rgba(231,179,164,.055),rgba(255,244,226,.015)),
+    url('assets/gallery3.webp?v=9') center/cover;
+  display:grid;place-items:end center;color:#fff;
+  overflow:hidden
 }
-.hero .inner{padding:0 22px 62px}
-.script{font-family:Parisienne,cursive;font-size:72px;line-height:.9;margin:0}
+.hero .inner{
+  width:min(92%,720px);
+  padding:0 18px 70px;
+  text-align:center;
+  text-shadow:0 2px 18px rgba(12,15,27,.42)
+}
+.hero-save{
+  display:flex;align-items:center;justify-content:center;
+  gap:13px;margin-bottom:14px;
+  font-family:Italiana,serif;
+  font-size:12px;letter-spacing:5px;text-transform:uppercase;
+  color:#fff4e9
+}
+.hero-save::before,.hero-save::after{
+  content:"";width:46px;height:1px;background:rgba(246,214,199,.78)
+}
+.hero-names{
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:2px;
+  font-family:Parisienne,cursive;
+  font-weight:400;
+  font-size:clamp(54px,10.5vw,80px);
+  line-height:.88;
+  letter-spacing:-1px;
+  color:#fffaf3
+}
+.hero-names span{display:block}
+.hero-names .amp{
+  display:block;
+  font-family:'Cormorant Garamond',serif;
+  font-size:.55em;
+  font-style:italic;
+  font-weight:500;
+  line-height:.75;
+  margin:.02em 0 .04em;
+  transform:none;
+  color:#e7b3a4;
+  text-shadow:0 2px 14px rgba(13,16,28,.55)
+}
+.hero-date{
+  margin-top:22px;
+  display:flex;align-items:center;justify-content:center;
+  gap:14px
+}
+.hero-date::before,.hero-date::after{
+  content:"";width:38px;height:1px;background:rgba(231,179,164,.72)
+}
+.hero-date span{
+  font-family:Italiana,serif;
+  letter-spacing:4.5px;
+  font-size:14px;
+  white-space:nowrap;
+  color:#fff1e5
+}
 .eyebrow{letter-spacing:6px;text-transform:uppercase;font-size:13px}
 .date{font-family:Italiana,serif;letter-spacing:6px;font-size:19px}
 .heart{font-size:26px}
@@ -60,11 +119,11 @@ section{max-width:760px;margin:auto;padding:72px 22px;text-align:center}
 .count b{display:block;font-size:30px;font-weight:500}
 .count span{font-size:12px;letter-spacing:2px}
 
-.details{background:#efe4d3;max-width:none}
+.details{background:#eee1d6;max-width:none}
 .details .wrap{max-width:760px;margin:auto}
 .cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .card{
-  background:#fffaf2;border:1px solid #c9ad7a;
+  background:#fff9f3;border:1px solid #c9ad86;
   border-radius:24px;padding:28px 16px
 }
 .card h3{font-family:Italiana,serif;font-size:25px;margin:8px}
@@ -74,7 +133,7 @@ section{max-width:760px;margin:auto;padding:72px 22px;text-align:center}
 .verse{
   max-width:none;
   padding:76px 22px 82px;
-  background:linear-gradient(180deg,#f8f2e8 0%,#fbf6ed 50%,#f8f2e8 100%);
+  background:linear-gradient(180deg,#f8f1e9 0%,#fcf7f1 50%,#f8f1e9 100%);
 }
 .verse-card{
   max-width:680px;
@@ -173,40 +232,16 @@ section{max-width:760px;margin:auto;padding:72px 22px;text-align:center}
 .reveal{opacity:0;transform:translateY(24px);transition:.9s}
 .reveal.show{opacity:1;transform:none}
 
-/* Background music button */
-.music-toggle{
-  position:fixed;
-  right:16px;
-  bottom:calc(16px + env(safe-area-inset-bottom));
-  z-index:70;
-  width:48px;height:48px;
-  border:1px solid #c8b78f;
-  border-radius:50%;
-  background:rgba(255,250,242,.9);
-  color:#56664e;
-  box-shadow:0 8px 24px rgba(46,54,42,.17);
-  backdrop-filter:blur(10px);
-  -webkit-backdrop-filter:blur(10px);
-  display:grid;place-items:center;
-  font-size:21px;
-  opacity:0;
-  pointer-events:none;
-  transition:.35s;
-}
-.music-toggle.visible{opacity:1;pointer-events:auto}
-.music-toggle.off{opacity:.72}
-.music-toggle.off::after{
-  content:"";
-  position:absolute;
-  width:24px;height:1.5px;
-  background:#9a7459;
-  transform:rotate(-48deg);
-  border-radius:4px;
-}
 
 @media(max-width:560px){
-  .script{font-size:58px}
   .cover h1{font-size:55px}
+  .hero .inner{width:94%;padding:0 12px 62px}
+  .hero-names{font-size:clamp(48px,14vw,62px);gap:0}
+  .hero-save{font-size:10px;letter-spacing:4px;gap:10px}
+  .hero-save::before,.hero-save::after{width:30px}
+  .hero-date{gap:10px;margin-top:18px}
+  .hero-date::before,.hero-date::after{width:24px}
+  .hero-date span{font-size:12px;letter-spacing:3.2px}
   .cards{grid-template-columns:1fr}
   .intro h2,.details h2,.gallery h2{font-size:32px}
   .slide img{height:62svh}
@@ -233,10 +268,13 @@ section{max-width:760px;margin:auto;padding:72px 22px;text-align:center}
 
 <section class="hero">
   <div class="inner reveal">
-    <div class="eyebrow">Save the date</div>
-    <h1 class="script">Kirolos <span style="font-size:.65em">&</span> Engy</h1>
-    <p class="date">27 OCTOBER 2026</p>
-    <div class="heart">♡</div>
+    <div class="hero-save">Save the Date</div>
+    <h1 class="hero-names">
+      <span>Kirolos</span>
+      <span class="amp">&amp;</span>
+      <span>Engy</span>
+    </h1>
+    <div class="hero-date"><span>27 OCTOBER 2026</span></div>
   </div>
 </section>
 
@@ -302,16 +340,16 @@ section{max-width:760px;margin:auto;padding:72px 22px;text-align:center}
     <div class="slider" id="slider">
       <div class="track" id="track">
         <div class="slide">
-          <img src="assets/gallery3.webp?v=7" alt="Kirolos and Engy" decoding="async">
+          <img src="assets/gallery3.webp?v=9" alt="Kirolos and Engy" decoding="async">
         </div>
         <div class="slide">
-          <img src="assets/gallery6.webp?v=7" alt="Kirolos and Engy" loading="lazy" decoding="async">
+          <img src="assets/gallery6.webp?v=9" alt="Kirolos and Engy" loading="lazy" decoding="async">
         </div>
         <div class="slide">
-          <img src="assets/gallery7.webp?v=7" alt="Kirolos and Engy" loading="lazy" decoding="async">
+          <img src="assets/gallery7.webp?v=9" alt="Kirolos and Engy" loading="lazy" decoding="async">
         </div>
         <div class="slide">
-          <img src="assets/gallery8.webp?v=7" alt="Kirolos and Engy" loading="lazy" decoding="async">
+          <img src="assets/gallery8.webp?v=9" alt="Kirolos and Engy" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -337,71 +375,25 @@ section{max-width:760px;margin:auto;padding:72px 22px;text-align:center}
 </footer>
 
 <audio id="bgMusic" loop preload="auto" playsinline>
-  <source src="assets/wedding-music.mp3?v=7" type="audio/mpeg">
+  <source src="assets/wedding-music.mp3?v=9" type="audio/mpeg">
 </audio>
 
-<button class="music-toggle off" id="musicToggle" aria-label="Toggle background music">♫</button>
 
 <script>
 const cover = document.getElementById('cover');
 const music = document.getElementById('bgMusic');
-const musicToggle = document.getElementById('musicToggle');
-let audioUnlocked = false;
-
-function setMusicState(playing){
-  musicToggle.classList.toggle('off', !playing);
-  musicToggle.setAttribute('aria-label', playing ? 'Pause background music' : 'Play background music');
-}
 
 function startMusic(){
   music.muted = false;
-  music.volume = 0.22;
-
-  const playPromise = music.play();
-  if(playPromise !== undefined){
-    playPromise
-      .then(()=>{
-        audioUnlocked = true;
-        setMusicState(true);
-      })
-      .catch(()=>{
-        setMusicState(false);
-      });
-  }
+  music.volume = 0.20;
+  music.play().catch(()=>{});
 }
-
-/* Unlock audio on the earliest real touch/click.
-   This is more reliable on Android Chrome than waiting for a later event. */
-function unlockAudio(){
-  if(audioUnlocked) return;
-  startMusic();
-}
-
-document.addEventListener('pointerdown', unlockAudio, {once:true, passive:true});
-document.addEventListener('touchstart', unlockAudio, {once:true, passive:true});
 
 function openInvite(){
   cover.classList.add('hide');
   document.body.style.overflow='auto';
-  musicToggle.classList.add('visible');
   startMusic();
 }
-
-musicToggle.addEventListener('click',(e)=>{
-  e.preventDefault();
-  e.stopPropagation();
-
-  if(music.paused){
-    startMusic();
-  }else{
-    music.pause();
-    setMusicState(false);
-  }
-});
-
-music.addEventListener('play',()=>setMusicState(true));
-music.addEventListener('pause',()=>setMusicState(false));
-music.addEventListener('error',()=>setMusicState(false));
 
 document.body.style.overflow='hidden';
 
